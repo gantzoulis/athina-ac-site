@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "News",
+  description:
+    "Read the latest announcements, school updates, and news from Athina AC.",
+};
+
 export default function NewsPage() {
   return (
     <main>
