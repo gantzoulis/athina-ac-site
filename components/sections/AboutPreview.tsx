@@ -6,31 +6,31 @@ export default function AboutPreview() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:items-center">
         <div className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-            About the School
+            Η Σχολή
           </p>
 
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900">
-            A school built on values, growth, and strong community.
+            Ένας χώρος με αξίες, εξέλιξη και δυνατή κοινότητα.
           </h2>
         </div>
 
         <div className="space-y-5 text-zinc-600">
           <p>
-            Athina AC is more than a training space. It is a supportive
-            environment where students can develop discipline, confidence,
-            resilience, and respect through martial arts.
+           O Α.Σ. Αθηνά είναι κάτι περισσότερο από ένας χώρος προπόνησης. Είναι
+            ένα υποστηρικτικό περιβάλλον όπου οι μαθητές καλλιεργούν πειθαρχία,
+            αυτοπεποίθηση, αντοχή και σεβασμό μέσα από τις πολεμικές τέχνες.
           </p>
 
           <p>
-            Our goal is to offer quality instruction in a welcoming setting for
-            every student, regardless of age or experience level.
+            Στόχος μας είναι να προσφέρουμε ποιοτική εκπαίδευση σε ένα φιλόξενο
+            περιβάλλον για κάθε μαθητή, ανεξαρτήτως ηλικίας ή επιπέδου.
           </p>
 
           <Link
             href="/about"
             className="inline-block rounded-2xl border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-900 transition hover:bg-white"
           >
-            Learn More
+            Μάθετε περισσότερα
           </Link>
         </div>
       </div>

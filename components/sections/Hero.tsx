@@ -2,36 +2,37 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
-      <div className="max-w-3xl space-y-6">
-        <p className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-500">
-          Hwal Moo Do • Kickboxing • Camps
-        </p>
+    <section className="bg-zinc-950 text-white">
+      <div className="mx-auto max-w-6xl px-6 py-28">
+        <div className="max-w-3xl space-y-6">
+          <p className="text-sm uppercase tracking-[0.3em] text-brand-primary">
+            Hwal Moo Do • Kickboxing • Womens Empowerment • Camps
+          </p>
 
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl md:text-6xl">
-          Strength, discipline, confidence.
-        </h1>
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl leading-tight">
+            Δύναμη. Πειθαρχία. Αυτοπεποίθηση.
+          </h1>
 
-        <p className="text-lg leading-8 text-zinc-600">
-          Welcome to Athina AC, a modern martial arts school dedicated to
-          personal growth, discipline, empowerment, and quality training for
-          children, teens, and adults.
-        </p>
+          <p className="text-lg leading-8 text-zinc-300">
+            Στον Α.Σ. Αθηνά καλλιεργούμε σώμα και πνεύμα μέσα από τις πολεμικές
+            τέχνες, σε ένα περιβάλλον εξέλιξης, σεβασμού και εσωτερικής δύναμης.
+          </p>
 
-        <div className="flex flex-wrap gap-4 pt-2">
-          <Link
-            href="/programs"
-            className="rounded-2xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:opacity-90"
-          >
-            Explore Programs
-          </Link>
+          <div className="flex flex-wrap gap-4 pt-4">
+            <Link
+              href="/programs"
+              className="rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-200"
+            >
+              Δείτε τα προγράμματα
+            </Link>
 
-          <Link
-            href="/contact"
-            className="rounded-2xl border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-900 transition hover:bg-zinc-50"
-          >
-            Contact Us
-          </Link>
+            <Link
+              href="/contact"
+              className="rounded-2xl border border-zinc-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
+            >
+              Επικοινωνία
+            </Link>
+          </div>
         </div>
       </div>
     </section>

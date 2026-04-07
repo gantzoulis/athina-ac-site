@@ -5,6 +5,9 @@ import Hero from "@/components/sections/Hero";
 import NewsPreview from "@/components/sections/NewsPreview";
 import ProgramsPreview from "@/components/sections/ProgramsPreview";
 import WomensEmpowermentPreview from "@/components/sections/WomensEmpowermentPreview";
+import NetworkSchoolsPreview from "@/components/sections/NetworkSchoolsPreview";
+//import BrandStatement from "@/components/sections/BrandStatement";
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,6 +24,7 @@ export default function HomePage() {
       <ProgramsPreview />
       <WomensEmpowermentPreview />
       <CampsPreview />
+      <NetworkSchoolsPreview />
       <NewsPreview />
       <ContactCTA />
     </main>
