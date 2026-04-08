@@ -1,22 +1,10 @@
-const schools = [
-  {
-    name: "Σχολή 1",
-    subtitle: "Hwal Moo Do / Kickboxing",
-    href: "#",
-  },
-  {
-    name: "Σχολή 2",
-    subtitle: "Ακαδημία / Club",
-    href: "#",
-  },
-  {
-    name: "Σχολή 3",
-    subtitle: "Συνεργαζόμενη σχολή",
-    href: "#",
-  },
-];
+import { schools } from "@/content/schools";
+
 
 export default function NetworkSchoolsPreview() {
+
+  const schoolList = schools.el;
+
   return (
     <section className="border-t border-zinc-200 bg-zinc-50">
       <div className="mx-auto max-w-6xl px-6 py-20">
@@ -36,7 +24,7 @@ export default function NetworkSchoolsPreview() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {schools.map((school) => (
+          {schoolList.map((school) => (
             <a
               key={school.name}
               href={school.href}
