@@ -1,32 +1,26 @@
 import Link from "next/link";
+import { news } from "@/content/news";
+import type { SiteLocale } from "@/content/types";
+import { ui } from "@/content/ui";
 
-const posts = [
-  {
-    title: "New Season Opening",
-    description: "We welcome students to a new season of training and growth.",
-  },
-  {
-    title: "Upcoming Camp Announcement",
-    description: "Stay tuned for our next camp experience and event details.",
-  },
-  {
-    title: "School News & Updates",
-    description:
-      "Announcements, milestones, and moments from our school community.",
-  },
-];
+type NewsPreviewProps = {
+  locale: SiteLocale;
+};
 
-export default function NewsPreview() {
+export default function NewsPreview({locale,}:NewsPreviewProps) {
+  const posts = news[locale];
+  const t = ui[locale].home.news;
+
   return (
     <section className="border-t border-zinc-200">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="space-y-3">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-              News
+              {t.eyebrow}
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-900">
-              Latest updates from the school.
+              {t.title}
             </h2>
           </div>
 
@@ -34,7 +28,7 @@ export default function NewsPreview() {
             href="/news"
             className="text-sm font-semibold text-zinc-900 underline-offset-4 hover:underline"
           >
-            View All News
+            {t.viewAll}
           </Link>
         </div>
 
@@ -50,6 +44,12 @@ export default function NewsPreview() {
               <p className="mt-3 leading-7 text-zinc-600">
                 {post.description}
               </p>
+              <Link
+                href={post.href}
+                className="mt-6 inline-block text-sm font-semibold text-brand-primary"
+              >
+                {t.cta}
+              </Link>
             </article>
           ))}
         </div>

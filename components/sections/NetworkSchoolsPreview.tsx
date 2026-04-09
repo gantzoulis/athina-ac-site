@@ -1,42 +1,37 @@
-const schools = [
-  {
-    name: "Σχολή 1",
-    subtitle: "Hwal Moo Do / Kickboxing",
-    href: "#",
-  },
-  {
-    name: "Σχολή 2",
-    subtitle: "Ακαδημία / Club",
-    href: "#",
-  },
-  {
-    name: "Σχολή 3",
-    subtitle: "Συνεργαζόμενη σχολή",
-    href: "#",
-  },
-];
+import { schools } from "@/content/schools";
+import type { SiteLocale } from "@/content/types";
+import { ui } from "@/content/ui";
 
-export default function NetworkSchoolsPreview() {
+
+type NetworkSchoolsPreviewProps = {
+  locale: SiteLocale;
+};
+
+export default function NetworkSchoolsPreview({locale,}:NetworkSchoolsPreviewProps) {
+
+  
+  const schoolList = schools[locale];
+  const t = ui[locale].home.network;
+
   return (
     <section className="border-t border-zinc-200 bg-zinc-50">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-10 max-w-3xl space-y-3">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-            Δίκτυο Σχολών
+           {t.eyebrow}
           </p>
 
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900">
-            Σχολές και συνεργασίες του δικτύου μας.
+           {t.title}
           </h2>
 
           <p className="leading-7 text-zinc-600">
-            Ανακαλύψτε σχολές, συνεργαζόμενους χώρους και σημεία εκπαίδευσης που
-            συνδέονται με το σύστημά μας και τη φιλοσοφία μας.
+            {t.description}
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {schools.map((school) => (
+          {schoolList.map((school) => (
             <a
               key={school.name}
               href={school.href}

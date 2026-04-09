@@ -10,6 +10,8 @@ import NetworkSchoolsPreview from "@/components/sections/NetworkSchoolsPreview";
 
 import { Metadata } from "next";
 
+const locale ="el" as const;
+
 export const metadata: Metadata = {
   title: "Martial Arts & Kickboxing in Athens",
   description:
@@ -21,11 +23,11 @@ export default function HomePage() {
     <main>
       <Hero />
       <AboutPreview />
-      <ProgramsPreview />
+      <ProgramsPreview locale={locale}/>
       <WomensEmpowermentPreview />
       <CampsPreview />
-      <NetworkSchoolsPreview />
-      <NewsPreview />
+      <NetworkSchoolsPreview locale={locale}/>
+      <NewsPreview locale={locale}/>
       <ContactCTA />
     </main>
   );
