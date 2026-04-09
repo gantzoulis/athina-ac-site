@@ -1,25 +1,27 @@
 import { schools } from "@/content/schools";
+import { ui } from "@/content/ui";
 
 
 export default function NetworkSchoolsPreview() {
 
-  const schoolList = schools.el;
+  const locale = "el";
+  const schoolList = schools[locale];
+  const t = ui[locale].home.network;
 
   return (
     <section className="border-t border-zinc-200 bg-zinc-50">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-10 max-w-3xl space-y-3">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-            Δίκτυο Σχολών
+           {t.eyebrow}
           </p>
 
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900">
-            Σχολές και συνεργασίες του δικτύου μας.
+           {t.title}
           </h2>
 
           <p className="leading-7 text-zinc-600">
-            Ανακαλύψτε σχολές, συνεργαζόμενους χώρους και σημεία εκπαίδευσης που
-            συνδέονται με το σύστημά μας και τη φιλοσοφία μας.
+            {t.description}
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-export const programsContent = {
+export const programs = {
   el: [
     {
       title: "Hwal Moo Do",
