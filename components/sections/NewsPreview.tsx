@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { news } from "@/content/news";
+import type { SiteLocale } from "@/content/types";
 import { ui } from "@/content/ui";
 
-export default function NewsPreview() {
-  const locale = "el";
+type NewsPreviewProps = {
+  locale: SiteLocale;
+};
+
+export default function NewsPreview({locale,}:NewsPreviewProps) {
   const posts = news[locale];
   const t = ui[locale].home.news;
 

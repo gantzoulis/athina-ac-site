@@ -1,10 +1,15 @@
 import { schools } from "@/content/schools";
+import type { SiteLocale } from "@/content/types";
 import { ui } from "@/content/ui";
 
 
-export default function NetworkSchoolsPreview() {
+type NetworkSchoolsPreviewProps = {
+  locale: SiteLocale;
+};
 
-  const locale = "el";
+export default function NetworkSchoolsPreview({locale,}:NetworkSchoolsPreviewProps) {
+
+  
   const schoolList = schools[locale];
   const t = ui[locale].home.network;
 
