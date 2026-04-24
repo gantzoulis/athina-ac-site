@@ -1,16 +1,19 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import ComingSoonPage from "@/components/ui/ComingSoonPage";
 
 export const metadata: Metadata = {
   title: "Kickboxing",
   description:
-    "Join Kickboxing classes at Athina AC in Athens for fitness, technique, confidence, and competitive development.",
+    "Ανακαλύψτε περισσότερα για τα προγράμματα Kickboxing του Α.Σ. Αθηνά.",
 };
 
 export default function KickboxingPage() {
   return (
-    <main>
-      <h1>Kickboxing</h1>
-      <p>Learn more about Kickboxing.</p>
-    </main>
+    <ComingSoonPage
+      locale="el"
+      eyebrow="Kickboxing"
+      title="Η σελίδα του Kickboxing ετοιμάζεται"
+      description="Σύντομα θα μπορείτε να δείτε περισσότερα για τα μαθήματα Kickboxing, τα επίπεδα προπόνησης και τη συνολική μας φιλοσοφία."
+    />
   );
 }

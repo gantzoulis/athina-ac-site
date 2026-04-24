@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import ComingSoonPage from "@/components/ui/ComingSoonPage";
 
 export const metadata: Metadata = {
   title: "About the School",
@@ -9,9 +10,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
-      <h1>About</h1>
-      <p>Information about the school.</p>
-    </main>
+    <ComingSoonPage
+      locale="el"
+      eyebrow="About"
+      title="Η σελίδα της σχολής ετοιμάζεται"
+      description="Πολύ σύντομα θα μπορείτε να δείτε περισσότερα για τη φιλοσοφία, την ταυτότητα και την πορεία του Α.Σ. Αθηνά. Μέχρι τότε, μπορείτε να επικοινωνήσετε μαζί μας για οποιαδήποτε πληροφορία."
+    />
   );
 }

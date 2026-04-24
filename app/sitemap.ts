@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://athina-ac.gr";
+  const baseUrl = "https://www.athina-ac.gr";
 
   return [
     {

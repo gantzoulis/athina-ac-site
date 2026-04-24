@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
+import ComingSoonPage from "@/components/ui/ComingSoonPage";
 
 export const metadata: Metadata = {
-  title: "News",
+  title: "Νέα",
   description:
-    "Read the latest announcements, school updates, and news from Athina AC.",
+    "Διαβάστε νέα, ανακοινώσεις και ενημερώσεις από τον Α.Σ. Αθηνά.",
 };
 
 export default function NewsPage() {
   return (
-    <main>
-      <h1>News</h1>
-      <p>Latest announcements and updates.</p>
-    </main>
+    <ComingSoonPage
+      locale="el"
+      eyebrow="News"
+      title="Η σελίδα των νέων ετοιμάζεται"
+      description="Σύντομα θα μπορείτε να δείτε ανακοινώσεις, ενημερώσεις, σημαντικά νέα και δράσεις από τη σχολή μας."
+    />
   );
 }

@@ -74,7 +74,65 @@ export const ui = {
       },
     },
     footer: {
-      copyright: "© {year} Α.Σ. Αθηνά. All rights reserved.[v0.144]",
+      copyright: "© {year} Α.Σ. Αθηνά. All rights reserved.[v0.224]",
+    },
+    programsPage: {
+      eyebrow: "Programs",
+      title: "Προγράμματα εκπαίδευσης",
+      description:
+        "Στον Α.Σ. Αθηνά προσφέρουμε προγράμματα που συνδυάζουν τεχνική εκπαίδευση, σωματική ανάπτυξη, πειθαρχία και προσωπική εξέλιξη.",
+      contactCta: "Επικοινωνία",
+    },
+    programsPhilosophy: {
+      title: "Η φιλοσοφία της εκπαίδευσης",
+      items: [
+        {
+          title: "Πειθαρχία",
+          description:
+            "Η συνέπεια και η πειθαρχία αποτελούν τη βάση κάθε προόδου, τόσο εντός όσο και εκτός προπόνησης.",
+        },
+        {
+          title: "Τεχνική",
+          description:
+            "Δίνουμε έμφαση στη σωστή εκτέλεση, την κατανόηση και την εξέλιξη της τεχνικής σε κάθε επίπεδο.",
+        },
+        {
+          title: "Προσωπική εξέλιξη",
+          description:
+            "Η προπόνηση δεν είναι μόνο σωματική, αλλά και ψυχική και πνευματική ανάπτυξη.",
+        },
+      ],
+    },
+    hwalMooDoPage: {
+      eyebrow: "Hwal Moo Do",
+      title: "Το μονοπάτι της πειθαρχίας, της τεχνικής και της εξέλιξης",
+      description:
+        "Το Hwal Moo Do είναι ένα ολοκληρωμένο σύστημα πολεμικής τέχνης που καλλιεργεί σώμα, πνεύμα και χαρακτήρα μέσα από συστηματική εκπαίδευση.",
+      introTitle: "Τι είναι το Hwal Moo Do;",
+      introText:
+        "Πρόκειται για μία πολεμική τέχνη που συνδυάζει τεχνική κατάρτιση, αυτοάμυνα, πειθαρχία, σεβασμό και προσωπική εξέλιξη. Η εκπαίδευση δεν αφορά μόνο τη φυσική ικανότητα, αλλά και τη στάση, τη συνέπεια και τον τρόπο σκέψης του μαθητή.",
+      pillarsTitle: "Βασικοί άξονες εκπαίδευσης",
+      pillars: [
+        {
+          title: "Τεχνική",
+          description:
+            "Έμφαση στη σωστή εκτέλεση, την ακρίβεια και τη σταθερή πρόοδο μέσα από οργανωμένη εκπαίδευση.",
+        },
+        {
+          title: "Πειθαρχία",
+          description:
+            "Η πρόοδος χτίζεται μέσα από συνέπεια, σεβασμό, έλεγχο και σωστή νοοτροπία.",
+        },
+        {
+          title: "Προσωπική εξέλιξη",
+          description:
+            "Η προπόνηση λειτουργεί ως εργαλείο ενδυνάμωσης του σώματος, του χαρακτήρα και της αυτοπεποίθησης.",
+        },
+      ],
+      ctaTitle: "Θέλετε να γνωρίσετε το Hwal Moo Do από κοντά;",
+      ctaText:
+        "Επικοινωνήστε μαζί μας για να μάθετε περισσότερα για το πρόγραμμα, τη φιλοσοφία και τον τρόπο εκπαίδευσης.",
+      ctaButton: "Επικοινωνία",
     },
   },
   en: {
@@ -152,7 +210,34 @@ export const ui = {
        },
     },
     footer: {
-      copyright: "© {year} A.C. Athina. All rights reserved.[v0.144]",
+      copyright: "© {year} A.C. Athina. All rights reserved.[v0.224]",
+    },
+    programsPage: {
+      eyebrow: "Programs",
+      title: "Training Programs",
+      description:
+        "At A.C. Athina, we offer programs that combine technical training, physical development, discipline, and personal growth.",
+      contactCta: "Contact us",
+    },
+    programsPhilosophy: {
+      title: "Training Philosophy",
+      items: [
+        {
+          title: "Discipline",
+          description:
+            "Consistency and discipline form the foundation of all progress, both inside and outside training.",
+        },
+        {
+          title: "Technique",
+          description:
+            "We emphasize correct execution, understanding, and technical progression at every level.",
+        },
+        {
+          title: "Personal Growth",
+          description:
+            "Training is not only physical, but also mental and personal development.",
+        },
+      ],
     },
   },
 };

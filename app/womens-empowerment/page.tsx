@@ -1,16 +1,19 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import ComingSoonPage from "@/components/ui/ComingSoonPage";
 
 export const metadata: Metadata = {
   title: "Women’s Empowerment",
   description:
-    "Athina AC supports women through martial arts training focused on confidence, self-protection, strength, and personal growth.",
+    "Μάθετε περισσότερα για το Women’s Empowerment section του Α.Σ. Αθηνά.",
 };
 
 export default function WomensEmpowermentPage() {
   return (
-    <main>
-      <h1>Women&apos;s Empowerment</h1>
-      <p>A safe and empowering space for growth, confidence, and strength.</p>
-    </main>
+    <ComingSoonPage
+      locale="el"
+      eyebrow="Women’s Empowerment"
+      title="Η σελίδα του Women’s Empowerment ετοιμάζεται"
+      description="Πολύ σύντομα θα μπορείτε να δείτε περισσότερα για τη φιλοσοφία, την ενδυνάμωση, την αυτοπεποίθηση και την υποστηρικτική προσέγγιση αυτού του χώρου."
+    />
   );
 }
