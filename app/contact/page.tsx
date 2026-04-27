@@ -12,6 +12,10 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const schoolAddress = "Αγίας Φωτεινής, 33 Νέα Σμύρνη";
+  const googleMapsUrl = "https://maps.app.goo.gl/WDW3X2dWvLJsen5Q7";
+  const googleMapsEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d786.5589655350686!2d23.712176489610524!3d37.94827839589859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bc525e4ec4ef%3A0xd1824cd4b343dc07!2sAgias%20Fotinis%2033%2C%20Athina%20171%2021!5e0!3m2!1sen!2sgr!4v1777194101807!5m2!1sen!2sgr";
+
   const formInfo = {
     telephone1: " +30 695 519 4933",
     telephone2: " +30 697 014 2125",
@@ -155,6 +159,43 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+        <section className="mt-16 rounded-3xl border border-zinc-800 bg-zinc-900/60 p-6">
+          <div className="grid gap-8 md:grid-cols-2 md:items-center">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-brand-primary">
+                Location
+              </p>
+
+              <h2 className="text-3xl font-bold tracking-tight text-white">
+                Πού θα μας βρείτε
+              </h2>
+
+              <p className="leading-8 text-zinc-300">
+                Η σχολή μας βρίσκεται στη διεύθυνση:
+              </p>
+
+              <p className="font-semibold text-white">{schoolAddress}</p>
+
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-200"
+              >
+                Οδηγίες στο Google Maps
+              </a>
+            </div>
+
+            <div className="overflow-hidden rounded-3xl border border-zinc-800">
+              <iframe
+                src={googleMapsEmbedUrl}
+                className="h-80 w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );

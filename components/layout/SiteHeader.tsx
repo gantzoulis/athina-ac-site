@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { SiteLocale } from "@/content/types";
 import { ui } from "@/content/ui";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import { usePathname } from "next/navigation";
 
 type SiteHeaderProps = {
   locale: SiteLocale;
@@ -13,6 +14,19 @@ type SiteHeaderProps = {
 
 export default function SiteHeader({ locale, onLocaleChange }: SiteHeaderProps) {
   const t = ui[locale].layout;
+
+  const pathname = usePathname();
+
+  function linkClass(href: string) {
+  const isActive =
+    href === "/"
+      ? pathname === "/"
+      : pathname.startsWith(href);
+
+  return isActive
+    ? "text-brand-primary font-semibold"
+    : "text-zinc-300 hover:text-brand-primary";
+}
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/95 backdrop-blur">
@@ -40,28 +54,28 @@ export default function SiteHeader({ locale, onLocaleChange }: SiteHeaderProps) 
 
        <div className="hidden items-center gap-6 md:flex">
         <div className="flex items-center gap-6 text-sm text-zinc-200">
-            <Link href="/about" className="transition hover:text-brand-primary">
+            <Link href="/about" className={linkClass("/about")}>
             {t.nav.about}
             </Link>
-            <Link href="/programs" className="transition hover:text-brand-primary">
+            <Link href="/programs" className={linkClass("/programs")}>
             {t.nav.programs}
             </Link>
             <Link
             href="/womens-empowerment"
-            className="transition hover:text-brand-primary"
+            className={linkClass("/womens-empowerment")}
             >
             {t.nav.womensEmpowerment}
             </Link>
-            <Link href="/camps" className="transition hover:text-brand-primary">
+            <Link href="/camps" className={linkClass("/camps")}>
             {t.nav.camps}
             </Link>
-            <Link href="/gallery" className="transition hover:text-brand-primary">
+            <Link href="/gallery" className={linkClass("/gallery")}>
             {t.nav.gallery}
             </Link>
-            <Link href="/news" className="transition hover:text-brand-primary">
+            <Link href="/news" className={linkClass("/news")}>
             {t.nav.news}
             </Link>
-            <Link href="/contact" className="transition hover:text-brand-primary">
+            <Link href="/contact" className={linkClass("/contact")}>
             {t.nav.contact}
             </Link>
         </div>

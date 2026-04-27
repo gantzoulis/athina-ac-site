@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 import { siteContent } from "@/content/site";
 import Image from "next/image";
+import SiteShell from "@/components/layout/SiteShell";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://athina-ac.gr"),
@@ -45,8 +46,9 @@ export default function RootLayout({
   return (
     <html lang="el">
       <body>
-        {children}
-        
+        <SiteShell>
+            {children}
+        </SiteShell>
       </body>
     </html>
   );

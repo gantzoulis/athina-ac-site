@@ -9,14 +9,15 @@ import NetworkSchoolsPreview from "@/components/sections/NetworkSchoolsPreview";
 import NewsPreview from "@/components/sections/NewsPreview";
 import ProgramsPreview from "@/components/sections/ProgramsPreview";
 import WomensEmpowermentPreview from "@/components/sections/WomensEmpowermentPreview";
-import type { SiteLocale } from "@/content/types";
+//import type { SiteLocale } from "@/content/types";
 import HomePageShell from "@/components/pages/HomePageShell";
+import { useLocale } from "@/components/layout/LocaleProvider";
 
 export default function HomePageContent() {
-  const [locale, setLocale] = useState<SiteLocale>("el");
+  //const [locale, setLocale] = useState<SiteLocale>("el");
+const { locale } = useLocale();
 
   return (
-    <HomePageShell locale={locale} onLocaleChange={setLocale}>
       <main>
         <Hero locale={locale} />
         <AboutPreview locale={locale} />
@@ -27,6 +28,5 @@ export default function HomePageContent() {
         <NewsPreview locale={locale} />
         <ContactCTA locale={locale} />
       </main>
-    </HomePageShell>
   );
 }
