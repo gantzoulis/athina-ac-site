@@ -165,6 +165,37 @@ export const ui = {
         "Ελάτε να δοκιμάσετε μία προπόνηση και να γνωρίσετε την εμπειρία του Kickboxing.",
       ctaButton: "Επικοινωνία",
     },
+    womensEmpowermentPage: {
+      eyebrow: "Women’s Empowerment",
+      title: "Δύναμη, αυτοπεποίθηση και αυτοπροστασία",
+      description:
+        "Ένας χώρος για γυναίκες που θέλουν να νιώσουν πιο δυνατές, πιο σίγουρες και πιο παρούσες μέσα από την κίνηση, την εκπαίδευση και τις πολεμικές τέχνες.",
+      introTitle: "Δεν είναι μόνο προπόνηση.",
+      introText:
+        "Το Women’s Empowerment στον Α.Σ. Αθηνά εστιάζει στην ενδυνάμωση μέσα από πρακτική εκπαίδευση, αυτοπροστασία, σωματική επίγνωση και καλλιέργεια αυτοπεποίθησης. Στόχος είναι κάθε γυναίκα να νιώθει ασφαλής, δυνατή και ικανή να σταθεί στον χώρο της με σιγουριά.",
+      pillarsTitle: "Σε τι εστιάζουμε",
+      pillars: [
+        {
+          title: "Αυτοπεποίθηση",
+          description:
+            "Χτίζουμε σιγουριά μέσα από σταδιακή πρόοδο, πρακτική εξάσκηση και θετική ενίσχυση.",
+        },
+        {
+          title: "Αυτοπροστασία",
+          description:
+            "Μαθαίνουμε βασικές αρχές αυτοάμυνας, επίγνωσης χώρου και ψύχραιμης αντίδρασης.",
+        },
+        {
+          title: "Σωματική δύναμη",
+          description:
+            "Βελτιώνουμε φυσική κατάσταση, σταθερότητα, αντοχή και έλεγχο του σώματος.",
+        },
+      ],
+      ctaTitle: "Θέλετε να το δοκιμάσετε;",
+      ctaText:
+        "Επικοινωνήστε μαζί μας για να μάθετε περισσότερα για τα μαθήματα, το περιβάλλον και τον τρόπο συμμετοχής.",
+      ctaButton: "Επικοινωνία",
+    },
   },
   en: {
     home: {
@@ -269,6 +300,37 @@ export const ui = {
             "Training is not only physical, but also mental and personal development.",
         },
       ],
+    },
+    womensEmpowermentPage: {
+      eyebrow: "Women’s Empowerment",
+      title: "Strength, confidence, and self-protection",
+      description:
+        "A space for women who want to feel stronger, more confident, and more present through movement, training, and martial arts.",
+      introTitle: "It is more than training.",
+      introText:
+        "Women’s Empowerment at A.C. Athina focuses on confidence, practical training, self-protection, body awareness, and personal growth. The goal is for every woman to feel safe, strong, and capable of standing in her space with confidence.",
+      pillarsTitle: "What we focus on",
+      pillars: [
+        {
+          title: "Confidence",
+          description:
+            "We build confidence through gradual progress, practical training, and positive reinforcement.",
+        },
+        {
+          title: "Self-protection",
+          description:
+            "We explore basic principles of self-defense, spatial awareness, and calm response.",
+        },
+        {
+          title: "Physical strength",
+          description:
+            "We improve conditioning, stability, endurance, and body control.",
+        },
+      ],
+      ctaTitle: "Would you like to try it?",
+      ctaText:
+        "Contact us to learn more about the classes, the environment, and how to join.",
+      ctaButton: "Contact us",
     },
   },
 };
