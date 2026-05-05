@@ -9,6 +9,7 @@ type HeroProps = {
 export default function Hero({locale,}:HeroProps) {
   const t = ui[locale].home.hero;
   return (
+    
     <section className="bg-zinc-950 text-white">
       <div className="mx-auto max-w-6xl px-6 py-28">
         <div className="max-w-3xl space-y-6">

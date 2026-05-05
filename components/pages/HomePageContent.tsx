@@ -12,6 +12,7 @@ import WomensEmpowermentPreview from "@/components/sections/WomensEmpowermentPre
 //import type { SiteLocale } from "@/content/types";
 import HomePageShell from "@/components/pages/HomePageShell";
 import { useLocale } from "@/components/layout/LocaleProvider";
+import HeroIntro from "../sections/HeroIntro";
 
 export default function HomePageContent() {
   //const [locale, setLocale] = useState<SiteLocale>("el");
@@ -19,6 +20,7 @@ const { locale } = useLocale();
 
   return (
       <main>
+        <HeroIntro />
         <Hero locale={locale} />
         <AboutPreview locale={locale} />
         <ProgramsPreview locale={locale} />

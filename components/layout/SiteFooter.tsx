@@ -51,7 +51,8 @@ export default function SiteFooter({ locale }: SiteFooterProps) {
 
          <div className="space-y-3 text-sm text-zinc-400">
             <p>info@athina-ac.gr</p>
-            <p>+30 69X XXX XXXX</p>
+            <p>+30 697 014 2125</p>
+            <p>+30 695 519 4933</p>
             <p>@athina.ac</p>
 
             <div className="flex items-center gap-4 pt-2">
