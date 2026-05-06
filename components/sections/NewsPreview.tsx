@@ -1,15 +1,37 @@
+"use client";
+
 import Link from "next/link";
 import { news } from "@/content/news";
 import type { SiteLocale } from "@/content/types";
 import { ui } from "@/content/ui";
+
+import { useEffect, useState } from "react";
+import { getPublishedNews } from "@/lib/news";
+import type { NewsPost } from "@/content/news.types";
 
 type NewsPreviewProps = {
   locale: SiteLocale;
 };
 
 export default function NewsPreview({locale,}:NewsPreviewProps) {
-  const posts = news[locale];
+  //const posts = news[locale];
   const t = ui[locale].home.news;
+
+
+  const [posts, setPosts] = useState<NewsPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getPublishedNews(3)
+      .then((data) => {
+        setPosts(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <section className="border-t border-zinc-200">
@@ -33,25 +55,23 @@ export default function NewsPreview({locale,}:NewsPreviewProps) {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {posts.map((post) => (
-            <article
-              key={post.title}
-              className="rounded-3xl border border-zinc-200 p-6"
-            >
-              <h3 className="text-xl font-semibold text-zinc-900">
-                {post.title}
-              </h3>
-              <p className="mt-3 leading-7 text-zinc-600">
-                {post.description}
-              </p>
-              <Link
-                href={post.href}
-                className="mt-6 inline-block text-sm font-semibold text-brand-primary"
-              >
-                {t.cta}
-              </Link>
-            </article>
-          ))}
+          {loading ? (
+              <p className="text-zinc-500">Loading...</p>
+            ) : posts.length === 0 ? (
+              <p className="text-zinc-500">No news yet.</p>
+            ) : (
+              posts.map((post) => (
+                <div key={post.id} className="space-y-2">
+                  <h3 className="text-lg font-semibold text-zinc-900">
+                    {post.title} [ {post.publishedAt?.toLocaleDateString()} ]
+                  </h3>
+
+                  <p className="text-sm text-zinc-600">
+                    {post.excerpt}
+                  </p>
+                </div>
+              ))
+            )}
         </div>
       </div>
     </section>
