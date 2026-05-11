@@ -8,6 +8,7 @@ import { ui } from "@/content/ui";
 import { useEffect, useState } from "react";
 import { getPublishedNews } from "@/lib/news";
 import type { NewsPost } from "@/content/news.types";
+import NewsCard from "@/components/ui/NewsCard";
 
 type NewsPreviewProps = {
   locale: SiteLocale;
@@ -56,22 +57,18 @@ export default function NewsPreview({locale,}:NewsPreviewProps) {
 
         <div className="grid gap-6 md:grid-cols-3">
           {loading ? (
-              <p className="text-zinc-500">Loading...</p>
-            ) : posts.length === 0 ? (
-              <p className="text-zinc-500">No news yet.</p>
-            ) : (
-              posts.map((post) => (
-                <div key={post.id} className="space-y-2">
-                  <h3 className="text-lg font-semibold text-zinc-900">
-                    {post.title} [ {post.publishedAt?.toLocaleDateString()} ]
-                  </h3>
-
-                  <p className="text-sm text-zinc-600">
-                    {post.excerpt}
-                  </p>
-                </div>
-              ))
-            )}
+            <p className="text-zinc-500">Loading...</p>
+          ) : posts.length === 0 ? (
+            <p className="text-zinc-500">No news yet.</p>
+          ) : (
+            posts.map((post) => (
+              <NewsCard
+                key={post.id}
+                post={post}
+                cta={t.cta}
+              />
+            ))
+          )}
         </div>
       </div>
     </section>
