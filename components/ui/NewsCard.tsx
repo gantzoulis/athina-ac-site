@@ -18,13 +18,26 @@ export default function NewsCard({ post, cta }: NewsCardProps) {
       </div>
 
       <div className="p-6">
-        <div className="mb-4 flex items-center justify-between text-xs text-zinc-500">
-          <span className="rounded-full border border-zinc-200 px-3 py-1">
-            {post.tags?.[0] || "News"}
-          </span>
+       <div className="mb-4 flex items-center justify-between gap-4 text-xs text-zinc-500">
+        <div className="flex flex-wrap items-center gap-2">
+            {post.tags && post.tags.length > 0 ? (
+              post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-zinc-200 px-3 py-1"
+                >
+                  {tag}
+                </span>
+              ))
+            ) : (
+              <span className="rounded-full border border-zinc-200 px-3 py-1">
+                News
+              </span>
+            )}
+          </div>
 
           {post.publishedAt ? (
-            <span>
+            <span className="shrink-0">
               {post.publishedAt.toLocaleDateString("el-GR")}
             </span>
           ) : null}
