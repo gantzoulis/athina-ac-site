@@ -30,6 +30,40 @@ export default function NewNewsPage() {
   const [status, setStatus] = useState<"draft" | "published">("draft");
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
+  const [coverImageFile, setCoverImageFile] = useState<File | null>(null);
+  const [uploadingImage, setUploadingImage] = useState(false);
+
+  async function uploadCoverImage(file: File) {
+    const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+    const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
+
+    if (!cloudName || !uploadPreset) {
+      throw new Error("Cloudinary config is missing.");
+    }
+
+    const formData = new FormData();
+
+    formData.append("file", file);
+    formData.append("upload_preset", uploadPreset);
+
+    const response = await fetch(
+      `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error("Cloudinary upload error:", data);
+      throw new Error("Image upload failed.");
+    }
+
+    return String(data.secure_url);
+  }
+
 
   async function handleSave(e: React.FormEvent) {
     e.preventDefault();
@@ -39,12 +73,20 @@ export default function NewNewsPage() {
     try {
       const finalSlug = slug || createSlug(title);
 
+      let finalCoverImageUrl = coverImageUrl;
+
+      if (coverImageFile) {
+        setUploadingImage(true);
+        finalCoverImageUrl = await uploadCoverImage(coverImageFile);
+        setUploadingImage(false);
+      }
+
       await addDoc(collection(db, "news"), {
         title,
         slug: finalSlug,
         excerpt,
         content,
-        coverImageUrl,
+        coverImageUrl:finalCoverImageUrl,
         tags: tags
           .split(",")
           .map((tag) => tag.trim())
@@ -66,7 +108,8 @@ export default function NewNewsPage() {
       setSlug("");
       setExcerpt("");
       setContent("");
-      setCoverImageUrl("");
+      //setCoverImageUrl("");
+      setCoverImageFile(null);
       setTags("");
       setStatus("draft");
     } catch (error) {
@@ -128,12 +171,21 @@ export default function NewNewsPage() {
             className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm"
           />
 
-          <input
-            value={coverImageUrl}
-            onChange={(e) => setCoverImageUrl(e.target.value)}
-            placeholder="Cover image URL"
-            className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm"
-          />
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-zinc-300">
+              Cover image upload
+            </label>
+
+            <input
+              type="file"
+              accept="image/*"
+              placeholder="Ανέβασμα Αρχείου"
+              onChange={(e) => {
+                setCoverImageFile(e.target.files?.[0] ?? null);
+              }}
+              className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm"
+            />
+          </div>
 
           <input
             value={tags}
@@ -165,10 +217,10 @@ export default function NewNewsPage() {
 
           <button
             type="submit"
-            disabled={saving}
+            disabled={saving || uploadingImage}
             className="w-full rounded-2xl bg-white px-5 py-3 font-semibold text-zinc-950 transition hover:bg-zinc-200 disabled:opacity-60"
           >
-            {saving ? "Αποθήκευση..." : "Αποθήκευση"}
+            {saving || uploadingImage ? "Αποθήκευση..." : "Αποθήκευση"}
           </button>
 
           {message ? <p className="text-sm text-zinc-300">{message}</p> : null}
