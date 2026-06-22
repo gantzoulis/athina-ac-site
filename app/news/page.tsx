@@ -1,19 +1,22 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import ComingSoonPage from "@/components/ui/ComingSoonPage";
+import NewsPageContent from "@/components/pages/NewsPageContent";
 
 export const metadata: Metadata = {
   title: "Νέα",
-  description:
-    "Διαβάστε νέα, ανακοινώσεις και ενημερώσεις από τον Α.Σ. Αθηνά.",
+  description: "Νέα και ανακοινώσεις από τον Α.Σ. Αθηνά.",
 };
 
 export default function NewsPage() {
   return (
-    <ComingSoonPage
-      locale="el"
-      eyebrow="News"
-      title="Η σελίδα των νέων ετοιμάζεται"
-      description="Σύντομα θα μπορείτε να δείτε ανακοινώσεις, ενημερώσεις, σημαντικά νέα και δράσεις από τη σχολή μας."
-    />
+    <Suspense
+      fallback={
+        <main className="min-h-[70vh] bg-zinc-950 px-6 py-24 text-white">
+          <div className="mx-auto max-w-6xl text-zinc-400">Loading...</div>
+        </main>
+      }
+    >
+      <NewsPageContent />
+    </Suspense>
   );
 }

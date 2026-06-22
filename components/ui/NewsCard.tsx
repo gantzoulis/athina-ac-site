@@ -52,7 +52,7 @@ export default function NewsCard({ post, cta }: NewsCardProps) {
         </p>
 
         <Link
-          href={`/news/${post.slug}`}
+          href={`/news?slug=${post.slug}`}
           className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-primary"
         >
           {cta}

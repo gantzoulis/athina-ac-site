@@ -74,7 +74,7 @@ export const ui = {
       },
     },
     footer: {
-      copyright: "© {year} Α.Σ. Αθηνά. All rights reserved.[v0.035]",
+      copyright: "© {year} Α.Σ. Αθηνά. All rights reserved.[v0.30.5.a]",
     },
     programsPage: {
       eyebrow: "Programs",
@@ -272,7 +272,7 @@ export const ui = {
        },
     },
     footer: {
-      copyright: "© {year} A.C. Athina. All rights reserved.[v0.035]",
+      copyright: "© {year} A.C. Athina. All rights reserved.[v0.30.5.a]",
     },
     programsPage: {
       eyebrow: "Programs",
