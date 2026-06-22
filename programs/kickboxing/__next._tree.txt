@@ -1,0 +1,4 @@
+:HL["/_next/static/chunks/0h.6k4n6j0ivy.css","style"]
+:HL["/images/kickboxing-hero.png","image"]
+:HL["/images/kickboxing-intro.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"programs","param":null,"prefetchHints":0,"slots":{"children":{"name":"kickboxing","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"MElvRMUqp2yTjc4X7doEt"}
