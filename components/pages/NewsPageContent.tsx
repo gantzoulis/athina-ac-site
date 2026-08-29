@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import NewsCard from "@/components/ui/NewsCard";
 import type { NewsPost } from "@/content/news.types";
 import { getPublishedNews, getPublishedNewsBySlug } from "@/lib/news";
+import RichTextContent from "@/components/content/RichTextContent";
 
 export default function NewsPageContent() {
   const searchParams = useSearchParams();
@@ -109,7 +110,7 @@ export default function NewsPageContent() {
 
         <article className="mx-auto max-w-3xl px-6 py-16">
           <div className="whitespace-pre-line text-lg leading-9 text-zinc-700">
-            {post.content}
+            <RichTextContent html={post.content} />
           </div>
         </article>
       </main>

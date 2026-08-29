@@ -78,7 +78,7 @@ export default function HwalMooDoPage() {
             <h2 className="mt-3 text-3xl font-bold">{t.pillarsTitle}</h2>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {t.pillars.map((pillar, index) => (
               <div
                 key={pillar.title}
@@ -100,6 +100,38 @@ export default function HwalMooDoPage() {
           </div>
         </div>
       </section>
+
+      <section>
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-10 md:grid-cols-2 md:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-brand-primary">
+                Training
+              </p>
+
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900">
+                {t.trainingTitle}
+              </h2>
+
+              <p className="mt-5 leading-8 text-zinc-600">
+                {t.trainingText}
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {t.trainingItems.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm"
+                >
+                  <p className="font-semibold text-zinc-900">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <section>
         <div className="mx-auto max-w-6xl px-6 py-20">
